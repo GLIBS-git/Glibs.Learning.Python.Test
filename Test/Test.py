@@ -11,8 +11,9 @@ def starter():
     #demo_print_1()
     #demo_input()
     #demo_arythmetic()
+    demo_logic_operators()
     #demo_logic_if()
-    demo_logic_sycle(4)
+    #demo_logic_sycle(4)
     #demo_cycle(4)
     #test()
 
@@ -46,8 +47,22 @@ def demo_arythmetic():
     i += 1
     print (i)
 
+def demo_logic_operators():
+    print("==== Demo of logic operators ====")
+    a = 1
+    b = 2
+    c = 3 
+    if (a > b and b <= c):
+        print("A")
+    if (a != b or b == c):
+        print("B")
+    if ("x" in "abcxyz"):
+        print("C")
+    if ("X" in "abcxyz"):
+        print("D")
+
 def demo_logic_if():
-    print("==== Demo of logic ====")
+    print("==== Demo of logic if ====")
     inp = input("Enter value: ")
     if (inp.strip().lower() == "a"):
         print("A!")
