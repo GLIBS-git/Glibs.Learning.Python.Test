@@ -51,11 +51,11 @@ def demo_logic():
     if (inp.strip().lower() == "a"):
         print("A!")
     elif (inp.strip().lower() == "b"):
-        print ("B!")
+        print("B!")
     elif (inp.strip().lower() == "c"):
-        print ("C!")
+        print("C!")
     else:
-        print ("Something else.")
+        print("Something else.")
 
 def demo_cycle () :
     print("==== Demo cycle ====")
@@ -70,10 +70,10 @@ def demo_cycle () :
 
 
 
-def test () :
-    print ("==== Test ====")
+def test():
+    print("==== Test ====")
 
-main (sys.argv)
+main(sys.argv)
 
 sys.exit() # Stops the script
 
