@@ -35,15 +35,15 @@ def demo_arythmetic():
     print("==== Demo of arythmetic ====")
     a = 7
     b = 2
-    print(a + b)
-    print(a / b)
-    print(a // b) # 3
-    print(a % b) # 2
-    print(a ** b) # a^b
-    print(round(1/3, 4))
+    print (a + b)
+    print (a / b)
+    print (a // b) # 3
+    print (a % b) # 2
+    print (a ** b) # a^b
+    print (round(1/3, 4))
     i = 0
     i += 1
-    print(i)
+    print (i)
 
 def demo_logic():
     print("==== Demo of logic ====")
@@ -51,26 +51,31 @@ def demo_logic():
     if (inp.strip().lower() == "a"):
         print("A!")
     elif (inp.strip().lower() == "b"):
-        print("B!")
+        print ("B!")
     elif (inp.strip().lower() == "c"):
-        print("C!")
+        print ("C!")
     else:
-        print("Something else.")
+        print ("Something else.")
 
-def demo_cycle():
+def demo_cycle () :
     print("==== Demo cycle ====")
     for i in range(10) :
-        print (i); #0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        print(i) #0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    print ();
     for i in range(5, 10) :
-        print (i); #5, 6, 7, 8, 9
+        print(i) #5, 6, 7, 8, 9
+    print ();
+    for i in range(5, 10, 2) :
+        print(i) #5, 7, 9
 
 
 
-def test():
-    print("==== Test ====")
+def test () :
+    print ("==== Test ====")
 
-main(sys.argv)
+main (sys.argv)
 
+sys.exit() # Stops the script
 
 
 
