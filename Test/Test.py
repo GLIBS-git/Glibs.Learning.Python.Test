@@ -11,10 +11,10 @@ def starter():
     #demo_print_1()
     #demo_input()
     #demo_arythmetic()
-    demo_logic_operators()
+    #demo_logic_operators()
     #demo_logic_if()
-    #demo_logic_sycle(4)
-    #demo_cycle(4)
+    demo_logic_sycle(4)
+    #demo_logic_sycle(_case = 4) # The named parameters
     #test()
 
 def demo_print_1():
@@ -73,7 +73,7 @@ def demo_logic_if():
     else:
         print("Something else.")
 
-def demo_logic_sycle(_case):
+def demo_logic_sycle(_case=1):
     print("==== Demo switch case ====")
     match _case:
         case 1:
