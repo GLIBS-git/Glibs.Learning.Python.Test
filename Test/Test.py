@@ -10,7 +10,8 @@ def starter():
     #demo_print_1()
     #demo_input()
     #demo_arythmetic()
-    demo_logic()
+    #demo_logic()
+    test()
 
 def demo_print_1():
     print("==== Demo of 'print' ====")
@@ -38,21 +39,29 @@ def demo_arythmetic():
     print(a % b) # 2
     print(a ** b) # a^b
     print(round(1/3, 4))
+    i = 0
+    i += 1
+    print(i)
 
 def demo_logic():
     print("==== Demo of logic ====")
     inp = input("Enter value: ")
-    if (inp.lower() == "a"):
+    if (inp.strip().lower() == "a"):
         print("A!")
-    elif (inp.lower() == "b"):
+    elif (inp.strip().lower() == "b"):
         print("B!")
-    elif (inp.lower() == "c"):
+    elif (inp.strip().lower() == "c"):
         print("C!")
     else:
         print("Something else.")
 
+def demo_cycle():
+    print("==== Demo cycle ====")
 
 
+
+def test():
+    print("==== Test ====")
 
 main(sys.argv)
 
