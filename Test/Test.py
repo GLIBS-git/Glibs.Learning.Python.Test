@@ -1,6 +1,7 @@
 '''
     Glibs learrning test scripts
 '''
+#!/usr/bin/python3
 import sys
 
 def main(_args):
@@ -11,7 +12,8 @@ def starter():
     #demo_input()
     #demo_arythmetic()
     #demo_logic()
-    test()
+    demo_cycle()
+    #test()
 
 def demo_print_1():
     print("==== Demo of 'print' ====")
@@ -57,6 +59,10 @@ def demo_logic():
 
 def demo_cycle():
     print("==== Demo cycle ====")
+    for i in range(10) :
+        print (i); #0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    for i in range(5, 10) :
+        print (i); #5, 6, 7, 8, 9
 
 
 
