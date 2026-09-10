@@ -11,8 +11,9 @@ def starter():
     #demo_print_1()
     #demo_input()
     #demo_arythmetic()
-    #demo_logic()
-    demo_cycle()
+    #demo_logic_if()
+    demo_logic_sycle(4)
+    #demo_cycle(4)
     #test()
 
 def demo_print_1():
@@ -45,7 +46,7 @@ def demo_arythmetic():
     i += 1
     print (i)
 
-def demo_logic():
+def demo_logic_if():
     print("==== Demo of logic ====")
     inp = input("Enter value: ")
     if (inp.strip().lower() == "a"):
@@ -57,16 +58,24 @@ def demo_logic():
     else:
         print("Something else.")
 
-def demo_cycle():
-    print("==== Demo cycle ====")
-    for i in range(10):
-        print(i) #0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    print();
-    for i in range(5, 10):
-        print(i) #5, 6, 7, 8, 9
-    print();
-    for i in range(5, 10, 2):
-        print(i) #5, 7, 9
+def demo_logic_sycle(_case):
+    print("==== Demo switch case ====")
+    match _case:
+        case 1:
+            for i in range(10):
+                print(i) #0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        case 2:
+            for i in range(5, 10):
+                    print(i) #5, 6, 7, 8, 9
+        case 3:
+            for i in range(5, 10, 2):
+                print(i) #5, 7, 9
+        case 4:
+            for ch in "Hello world!":
+                print(ch) #H, e, l, l, o,  , w, o, r, l, d, !
+        case _:
+            print("Default case")
+
 
 
 
