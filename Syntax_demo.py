@@ -1,5 +1,5 @@
 '''
-    Glibs learrning test scripts
+    Glibs learning test scripts
 '''
 #!/usr/bin/python3
 import sys
