@@ -13,11 +13,13 @@ def starter():
     #demo_arythmetic()
     #demo_logic_operators()
     #demo_logic_if()
+    demo_logic_if_2(1) # Dynamic parameter for IF
+    demo_logic_if_2("a") # Dynamic parameter for IF
     #demo_logic_sycle(4)
     #demo_logic_sycle(_case = 4) # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #demo_logic_sycle(_case = "d") # The named parameters with different types, int or str, are supported in Python 3.10 and later.
-    print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
-    print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
+    #print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
+    #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
     #test()
 
 def demo_print_1():
@@ -72,6 +74,18 @@ def demo_logic_if():
     elif (inp.strip().lower() == "b"):
         print("B!")
     elif (inp.strip().lower() == "c"):
+        print("C!")
+    else:
+        print("Something else.")
+
+def demo_logic_if_2(_cond):
+    print("==== Demo of logic if dynamic parameter type ====")
+    print(f"Parameter: {_cond}")
+    if (_cond == "a" or _cond == 1):
+        print("A!")
+    elif (_cond == "b" or _cond == 2):
+        print("B!")
+    elif (_cond == "c" or _cond == 3):
         print("C!")
     else:
         print("Something else.")
