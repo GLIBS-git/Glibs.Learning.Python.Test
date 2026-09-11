@@ -3,11 +3,14 @@
 '''
 #!/usr/bin/python3
 import sys
+import os
+import subprocess
 
 def main(_args):
     starter()
 
 def starter():
+    clear_console()    
     #demo_print_1()
     #demo_input()
     #demo_arythmetic()
@@ -20,10 +23,16 @@ def starter():
     #demo_logic_sycle(_case = "d") # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
-    #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123))
-    print(demo_a_la_ax_strfmt(123, "Text", 123))
+    print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123))
+    #print(demo_a_la_ax_strfmt(123, "Text", 123)) # Raises error
     #test()
 
+def clear_console():
+    if os.name == "nt":
+        subprocess.run(["cmd", "/c", "cls"], check=False)
+    else:
+        subprocess.run(["clear"], check=False)
+        
 def demo_print_1():
     print("==== Demo of 'print' ====")
     print("Hello world!")
@@ -124,6 +133,9 @@ def demo_function_return(_case=1):
 
 def demo_a_la_ax_strfmt(_template, *_values): #TODO: Add type checking for _template
     print("==== Demo a-la Ax strfmt ====")
+    print(f"Parameters: Template:{_template}. Values: {_values}")
+    if not isinstance(_template, str):
+        raise TypeError("Template parameter must be a string!")
     i = 0
     ret: str = _template
     for val in _values:
