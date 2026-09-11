@@ -23,7 +23,7 @@ def starter():
     #demo_logic_sycle(_case = "d") # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
-    print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123))
+    print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
     #print(demo_a_la_ax_strfmt(123, "Text", 123)) # Raises error
     #test()
 
@@ -131,11 +131,13 @@ def demo_function_return(_case=1):
         case _:
             return "Default case"
 
-def demo_a_la_ax_strfmt(_template, *_values): #TODO: Add type checking for _template
-    print("==== Demo a-la Ax strfmt ====")
-    print(f"Parameters: Template:{_template}. Values: {_values}")
+def demo_a_la_ax_strfmt(_template: str, *_values):
+    print("==== Demo a-la Ax strfmt() ====")
+    print("Parameters:")
+    print(f"        Template: {_template}")
+    print(f"        Values: {_values}")
     if not isinstance(_template, str):
-        raise TypeError("Template parameter must be a string!")
+        raise TypeError("The template parameter must be a string!")
     i = 0
     ret: str = _template
     for val in _values:
