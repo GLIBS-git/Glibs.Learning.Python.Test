@@ -29,7 +29,7 @@ def demo_print_1():
     print(f"2 * 2 = {2 * 2}")
     print("123", "789", sep=" ", end=" ")
     print("456")
-    path = r"D:\Python\Source"
+    path = r"D:\Python\Source" # D:\Python\Source, but D:\Python\Source\ not working, because the last backslash is an escape character, so it needs to be escaped with another backslash or use raw string.
     print(path)
 
 def demo_input():
@@ -88,7 +88,7 @@ def demo_logic_if_2(_cond):
     elif (_cond == "c" or _cond == 3):
         print("C!")
     else:
-        print("Something else.")
+        pass # Do nothing, just skip to the next statement
 
 def demo_logic_sycle(_case=1): # Dynamic parameter type, can be int or str
     print("==== Demo switch case ====")
