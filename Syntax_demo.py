@@ -13,13 +13,15 @@ def starter():
     #demo_arythmetic()
     #demo_logic_operators()
     #demo_logic_if()
-    demo_logic_if_2(1) # Dynamic parameter for IF
-    demo_logic_if_2("a") # Dynamic parameter for IF
+    #demo_logic_if_2(1) # Dynamic parameter for IF
+    #demo_logic_if_2("a") # Dynamic parameter for IF
     #demo_logic_sycle(4)
     #demo_logic_sycle(_case = 4) # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #demo_logic_sycle(_case = "d") # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
+    #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123))
+    print(demo_a_la_ax_strfmt(123, "Text", 123))
     #test()
 
 def demo_print_1():
@@ -119,6 +121,16 @@ def demo_function_return(_case=1):
             return "Two"
         case _:
             return "Default case"
+
+def demo_a_la_ax_strfmt(_template, *_values): #TODO: Add type checking for _template
+    print("==== Demo a-la Ax strfmt ====")
+    i = 0
+    ret: str = _template
+    for val in _values:
+        i += 1
+        ret = ret.replace(f"%{i}", str(val))
+    return ret
+
 
 
 
