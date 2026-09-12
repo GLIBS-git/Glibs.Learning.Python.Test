@@ -11,11 +11,15 @@ def main(_args):
 
 def starter():
     clear_console()    
-    #demo_print_1()
+    #demo_print()
+    demo_print_sys_names()
     #demo_input()
+    #demo_types()
+    #demo_variables_and_inner_functions()
     #demo_arythmetic()
     #demo_logic_operators()
     #demo_logic_if()
+    #demo_logic_if_ternary()
     #demo_logic_if_2(1) # Dynamic parameter for IF
     #demo_logic_if_2("a") # Dynamic parameter for IF
     #demo_logic_sycle(4)
@@ -23,7 +27,7 @@ def starter():
     #demo_logic_sycle(_case = "d") # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
-    print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
+    #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
     #print(demo_a_la_ax_strfmt(123, "Text", 123)) # Raises error
     #test()
 
@@ -33,7 +37,7 @@ def clear_console():
     else:
         subprocess.run(["clear"], check=False)
         
-def demo_print_1():
+def demo_print():
     print("==== Demo of 'print' ====")
     print("Hello world!")
     print(2 * 2)
@@ -43,11 +47,68 @@ def demo_print_1():
     path = r"D:\Python\Source" # D:\Python\Source, but D:\Python\Source\ not working, because the last backslash is an escape character, so it needs to be escaped with another backslash or use raw string.
     print(path)
 
+def demo_print_sys_names():
+    print("==== Demo of system names ====")
+    print(__name__) # Prints the name of the current module
+    print(__file__) # Prints the path of the current module
+    print(sys.platform) # Prints the platform (e.g., win32, linux, darwin)
+    print(sys.version) # Prints the Python version
+
+
 def demo_input():
     print("==== Demo of console input ====")
     inp = input("Enter text: ")
     print()
     print(inp)
+
+def demo_types():
+    print("==== Demo of type conversion ====")
+    x = 1
+    y = "a"
+    z = 1.11
+    print(str(x) + " " + y)
+    print(int(z))
+    a = "123"
+    b = 25
+    print(int(a) + b)
+    c = "1.11"
+    print(float(c) + z)
+    d = "4a5b6"
+    #print(int(d)) # This will raise a ValueError because the string contains non-numeric characters
+    print(d.isdigit()) # False, because the string contains non-numeric characters
+
+def demo_types_decimal():
+    print("==== Demo of decimal type ====")
+
+
+
+
+
+def demo_dates():
+    print("==== Demo of decimal type ====")
+
+
+
+
+
+
+
+def demo_variables_and_inner_functions():
+    print("==== Local and global variables & inner functions ====")
+    s = "Hello world!"
+    print("Top function before: ", s)
+    def inner_1():
+        s = 0
+        print("Local inner 1: ", s)
+    inner_1()
+    print("Top function after inner 1:", s)
+    def inner_2():
+        global t # Refers to variable defined outside all functions (only in main script)
+        nonlocal s
+        s = 0
+        print("Local inner 2: ", s)
+    inner_2()
+    print("Top function after inner 2:", s)
 
 def demo_arythmetic():
     print("==== Demo of arythmetic ====")
@@ -91,7 +152,13 @@ def demo_logic_if():
     else:
         print("Something else.")
 
-def demo_logic_if_2(_cond):
+def demo_logic_if_ternary(): # Ternary operator
+    print("==== Demo of ternary operator ====")
+    a = 1
+    b = 2
+    print("A") if a > b else print("B")
+
+def demo_logic_if_dynamic_param(_cond):
     print("==== Demo of logic if dynamic parameter type ====")
     print(f"Parameter: {_cond}")
     if _cond == "a" or _cond == 1:
