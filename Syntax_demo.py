@@ -5,6 +5,8 @@
 import sys
 import os
 import subprocess
+from decimal import Decimal, ROUND_HALF_UP
+#import decimal as decAll # Set alias for imported module
 
 def main(_args):
     starter()
@@ -12,9 +14,10 @@ def main(_args):
 def starter():
     clear_console()    
     #demo_print()
-    demo_print_sys_names()
+    #demo_print_sys_names()
     #demo_input()
     #demo_types()
+    demo_decimal()
     #demo_variables_and_inner_functions()
     #demo_arythmetic()
     #demo_logic_operators()
@@ -51,6 +54,7 @@ def demo_print_sys_names():
     print("==== Demo of system names ====")
     print(__name__) # Prints the name of the current module
     print(__file__) # Prints the path of the current module
+    #print(__package__) # Prints the package of the current module
     print(sys.platform) # Prints the platform (e.g., win32, linux, darwin)
     print(sys.version) # Prints the Python version
 
@@ -77,12 +81,34 @@ def demo_types():
     #print(int(d)) # This will raise a ValueError because the string contains non-numeric characters
     print(d.isdigit()) # False, because the string contains non-numeric characters
 
-def demo_types_decimal():
+def demo_decimal():
     print("==== Demo of decimal type ====")
-
-
-
-
+    dn1 = Decimal("1.11111")
+    dn2 = Decimal("1.11111")
+    print(dn1 + dn2)
+    dn3 = dn1 + dn2
+    print(dn3)
+    dn4 = dn1 * dn2
+    print(dn4)
+    dn5 = dn4.quantize(Decimal("1.00")) # dn4 is untouched
+    print(dn4)
+    print(dn5)
+    print()
+    print(Decimal("1.45").quantize(Decimal("1.0"))) # Not standard mathematical rounding
+    print(Decimal("1.35").quantize(Decimal("1.0"))) # Not standard mathematical rounding
+    print(Decimal("1.25").quantize(Decimal("1.0"))) # Not standard mathematical rounding
+    print(Decimal("1.15").quantize(Decimal("1.0"))) # Not standard mathematical rounding
+    print()
+    print(Decimal("1.45").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
+    print(Decimal("1.35").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
+    print(Decimal("1.25").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
+    print(Decimal("1.15").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
+    print(Decimal("1.14").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
+    print()
+    print(Decimal("9").sqrt())
+    print(Decimal("3").sqrt())
+    print(Decimal("2")**2)
+    print(Decimal("1.1")**2)
 
 def demo_dates():
     print("==== Demo of decimal type ====")
@@ -220,9 +246,9 @@ def demo_a_la_ax_strfmt(_template: str, *_values):
 def test():
     print("==== Test ====")
 
-main(sys.argv)
-
-sys.exit() # Stops the script
+if __name__ == "__main__": # This will run if the script was run directly, not called as the module
+    main(sys.argv)
+    sys.exit() # Stops the script
 
 
 
