@@ -2,11 +2,15 @@
     Glibs learning test scripts
 '''
 #!/usr/bin/python3
-import sys
+import asyncio
+import datetime
+#import decimal as decAll       # Sets an alias for imported module
+from decimal import Decimal, ROUND_HALF_UP
+import Module_demo
 import os
 import subprocess
-from decimal import Decimal, ROUND_HALF_UP
-#import decimal as decAll # Set alias for imported module
+import sys
+import time
 
 def main(_args):
     starter()
@@ -17,7 +21,8 @@ def starter():
     #demo_print_sys_names()
     #demo_input()
     #demo_types()
-    demo_decimal()
+    #demo_decimal()
+    #demo_dates()
     #demo_variables_and_inner_functions()
     #demo_arythmetic()
     #demo_logic_operators()
@@ -32,6 +37,7 @@ def starter():
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
     #print(demo_a_la_ax_strfmt(123, "Text", 123)) # Raises error
+    demo_module()
     #test()
 
 def clear_console():
@@ -49,6 +55,8 @@ def demo_print():
     print("456")
     path = r"D:\Python\Source" # D:\Python\Source, but D:\Python\Source\ not working, because the last backslash is an escape character, so it needs to be escaped with another backslash or use raw string.
     print(path)
+    print(1); print(2); print(3) # This way is possible
+    print("Value 1: {}.    Value 2: {}.    Value 3: {}.".format(1, 2, 3)) # Formatting a string
 
 def demo_print_sys_names():
     print("==== Demo of system names ====")
@@ -57,7 +65,6 @@ def demo_print_sys_names():
     #print(__package__) # Prints the package of the current module
     print(sys.platform) # Prints the platform (e.g., win32, linux, darwin)
     print(sys.version) # Prints the Python version
-
 
 def demo_input():
     print("==== Demo of console input ====")
@@ -109,12 +116,26 @@ def demo_decimal():
     print(Decimal("3").sqrt())
     print(Decimal("2")**2)
     print(Decimal("1.1")**2)
+    print(pow(Decimal("1.1"),2))
 
 def demo_dates():
     print("==== Demo of decimal type ====")
-
-
-
+    dd = datetime.date.today()
+    print(dd)
+    dt = datetime.datetime.today()
+    print(dt)
+    time.sleep(0.5) # Seconds
+    dt_2 = datetime.datetime.today()
+    print(dt_2 - dt)
+    async def xSleep(s):
+        await asyncio.sleep(s) # Seconds
+    asyncio.run(xSleep(0.3))
+    dt_3 = datetime.datetime.today()
+    print(dt_3 - dt_2)
+    dt_4 = datetime.datetime.strptime("01-01-2027 00:00:00", "%d-%m-%Y %H:%M:%S")
+    print(dt_4)
+    dt_5 = datetime.datetime.strptime("01-01-27 00:00:00", "%d-%m-%y %H:%M:%S")
+    print(dt_5)
 
 
 
@@ -149,6 +170,11 @@ def demo_arythmetic():
     i = 0
     i += 1
     print(i)
+    print()
+    print(pow(2, 3))
+    print(abs(-1))
+    print(min(1, 2, 3))
+    print(max(1, 2, 3))
 
 def demo_logic_operators():
     print("==== Demo of logic operators ====")
@@ -240,6 +266,15 @@ def demo_a_la_ax_strfmt(_template: str, *_values):
         ret = ret.replace(f"%{i}", str(val))
     return ret
 
+def demo_module():
+    print("==== Demo of using a module ====")
+    Module_demo.print_hello()
+
+def demo_async_io(): # Take info from Claude
+    print("==== Demo async/await ====")
+
+def demo_threading(): # Take info from Claude
+    print("==== Demo async/await ====")
 
 
 
