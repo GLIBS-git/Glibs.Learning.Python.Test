@@ -137,9 +137,6 @@ def demo_dates():
     dt_5 = datetime.datetime.strptime("01-01-27 00:00:00", "%d-%m-%y %H:%M:%S")
     print(dt_5)
 
-
-
-
 def demo_variables_and_inner_functions():
     print("==== Local and global variables & inner functions ====")
     s = "Hello world!"
