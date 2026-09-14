@@ -20,6 +20,7 @@ def starter():
     #demo_print()
     #demo_print_sys_names()
     #demo_input()
+    demo_string()
     #demo_types()
     #demo_decimal()
     #demo_dates()
@@ -37,7 +38,7 @@ def starter():
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
     #print(demo_a_la_ax_strfmt(123, "Text", 123)) # Raises error
-    demo_module()
+    #demo_module()
     #test()
 
 def clear_console():
@@ -71,6 +72,34 @@ def demo_input():
     inp = input("Enter text: ")
     print()
     print(inp)
+
+def demo_string():
+    print("==== Strings ====")
+    s1 = "Test!"
+    print(s1)
+    s2 = 'Test!'
+    print(s2)
+    mls = ("123" # Multiline string
+    "456")
+    print(mls)
+    mlt = '''123 # Multiline text
+456
+789'''
+    print(mlt)
+    sa = "12345!"
+    print(sa[1]) # 2
+    print(sa[-2]) # 5
+    print("0123456789"[2:4]) # Substring: 23 
+    print("0123456789"[:3]) # Substring: 012
+    print("0123456789"[7:]) # Substring: 789
+    print("0" * 5 + "1") # 000001
+    print("aBcD".lower()) # abcd
+    print("aBcD".upper()) # ABCD
+    print(ord(" ")) # 32
+    print(len("012345")) # 6
+    print("12" in "012345667") # True
+    print("ab" not in "012345667") # True
+
 
 def demo_types():
     print("==== Demo of type conversion ====")
