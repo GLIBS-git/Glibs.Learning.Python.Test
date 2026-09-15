@@ -82,9 +82,9 @@ def demo_string():
     mls = ("123" # Multiline string
     "456")
     print(mls)
-    mlt = '''123 # Multiline text
-456
-789'''
+    mlt = '''Multiline text 1
+Multiline text 2
+Multiline text 3'''
     print(mlt)
     sa = "12345!"
     print(sa[1]) # 2
