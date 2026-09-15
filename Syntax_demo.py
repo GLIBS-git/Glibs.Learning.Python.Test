@@ -20,7 +20,8 @@ def starter():
     #demo_print()
     #demo_print_sys_names()
     #demo_input()
-    demo_string()
+    #demo_string()
+    demo_string_functions()
     #demo_types()
     #demo_decimal()
     #demo_dates()
@@ -93,13 +94,26 @@ Multiline text 3'''
     print("0123456789"[:3]) # Substring: 012
     print("0123456789"[7:]) # Substring: 789
     print("0" * 5 + "1") # 000001
+
+def demo_string_functions():
+    print("==== Strings ====")
     print("aBcD".lower()) # abcd
     print("aBcD".upper()) # ABCD
     print(ord(" ")) # 32
+    print(chr(9)) # \t
     print(len("012345")) # 6
     print("12" in "012345667") # True
     print("ab" not in "012345667") # True
-
+    print("  ab  ".strip()) # ab
+    print("0123456789".find("23")) # 2
+    print((" 0123456789 " * 5).replace("45", "abcd")) #  0123abcd6789  0123abcd6789  0123abcd6789  0123abcd6789  0123abcd6789 
+    print((" 0123456789 " * 5).replace("45", "abcd", 3)) #  0123abcd6789  0123abcd6789  0123abcd6789  0123456789  0123456789 
+    print(("123;456;789").split(";")) # ['123', '456', '789']
+    print("; ".join(["123","456","789"])) # From list: 123; 456; 789 
+    print("; ".join(("123","456","789"))) # From tuple: 123; 456; 789
+    print(" ".join("0123456789")) # From sring array: 0 1 2 3 4 5 6 7 8 9
+    print("12345".isnumeric()) # True
+    print("1a2b3".isnumeric()) # False
 
 def demo_types():
     print("==== Demo of type conversion ====")
