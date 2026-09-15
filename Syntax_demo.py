@@ -25,8 +25,7 @@ def starter():
     #demo_string_formatting()
     #demo_types()
     #demo_decimal()
-    ##demo_exceptions()
-    demo_throw_exceptions()
+    demo_exceptions()
     #demo_dates()
     #demo_variables_and_inner_functions()
     #demo_arythmetic()
@@ -179,13 +178,22 @@ def demo_exceptions():
         print("Error: Division by zero is not allowed.")
     finally:
         print("This block is executed regardless of whether an exception occurred or not.")
-
-def demo_throw_exceptions():
-    print("==== Demo of exceptions ====")
-    raise ValueError("This is a custom error message.")
+    print()
+    try:
+        raise ValueError("This is a custom error message.")
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+    #except ValueError as ve:
+    #    print(f"Error: Incorrect value: {ve}")
+    except RuntimeError as e:
+        print(f"Error: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
+    finally:
+        print("This block is executed regardless of whether an exception occurred or not.")
 
 def demo_dates():
-    print("==== Demo of decimal type ====")
+    print("==== Demo of dates ====")
     dd = datetime.date.today()
     print(dd)
     dt = datetime.datetime.today()
