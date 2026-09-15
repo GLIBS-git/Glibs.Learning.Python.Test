@@ -186,9 +186,9 @@ def demo_exceptions():
     #except ValueError as ve:
     #    print(f"Error: Incorrect value: {ve}")
     except RuntimeError as e:
-        print(f"Error: {e}")
+        print(f"Runtime error caught: {e}")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"General exception caught: {e}")
     finally:
         print("This block is executed regardless of whether an exception occurred or not.")
 
