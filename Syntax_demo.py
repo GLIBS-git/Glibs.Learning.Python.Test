@@ -22,9 +22,11 @@ def starter():
     #demo_input()
     #demo_string()
     #demo_string_functions()
-    demo_string_formatting()
+    #demo_string_formatting()
     #demo_types()
     #demo_decimal()
+    ##demo_exceptions()
+    demo_throw_exceptions()
     #demo_dates()
     #demo_variables_and_inner_functions()
     #demo_arythmetic()
@@ -117,12 +119,11 @@ def demo_string_functions():
     print("1a2b3".isnumeric()) # False
 
 def demo_string_formatting():
-    print("==== String functions ====")
+    print("==== String formatting ====")
     print("P1: {}. P2: {}.".format("1", "2"))
     print("P1: {0}. P2: {1}.".format("1", "2"))
     #print("P1: {1}. P2: {2}.".format("1", "2")) # Out or array range exception!
-
-
+    print("P1: {0}. P2: {0}.".format("1", "2"))
 
 def demo_types():
     print("==== Demo of type conversion ====")
@@ -169,6 +170,19 @@ def demo_decimal():
     print(Decimal("2")**2)
     print(Decimal("1.1")**2)
     print(pow(Decimal("1.1"),2))
+
+def demo_exceptions():
+    print("==== Demo of exceptions ====")
+    try:
+        x = 1 / 0
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+    finally:
+        print("This block is executed regardless of whether an exception occurred or not.")
+
+def demo_throw_exceptions():
+    print("==== Demo of exceptions ====")
+    raise ValueError("This is a custom error message.")
 
 def demo_dates():
     print("==== Demo of decimal type ====")
