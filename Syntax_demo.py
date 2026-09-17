@@ -185,6 +185,8 @@ def demo_exceptions():
         print("Error: Division by zero is not allowed.")
     #except ValueError as ve:
     #    print(f"Error: Incorrect value: {ve}")
+    #except (TypeError, NameError) as ve: # Several exceptions can be caught in one block
+    #    print(f"Error: Incorrect value: {ve}")
     except RuntimeError as e:
         print(f"Runtime error caught: {e}")
     except Exception as e:
