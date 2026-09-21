@@ -31,7 +31,10 @@ def menu():
     #demo_arythmetic()
     #math_demo.demo_arythmetic()
     #math_demo.demo_decimal()
-    math_demo.demo_random()
+    #math_demo.demo_random()
+    #logic_demo.demo_logic_operators()
+    #logic_demo.demo_logic_if()
+    logic_demo.demo_logic_if_ternary()
     #demo_logic_if_2(1) # Dynamic parameter for IF
     #demo_logic_if_2("a") # Dynamic parameter for IF
     #demo_logic_sycle(4)
