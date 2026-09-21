@@ -32,9 +32,6 @@ def menu():
     #math_demo.demo_arythmetic()
     #math_demo.demo_decimal()
     math_demo.demo_random()
-    #demo_logic_operators()
-    #demo_logic_if()
-    #demo_logic_if_ternary()
     #demo_logic_if_2(1) # Dynamic parameter for IF
     #demo_logic_if_2("a") # Dynamic parameter for IF
     #demo_logic_sycle(4)
@@ -201,40 +198,6 @@ def demo_variables_and_inner_functions():
         print("Local inner 2: ", s)
     inner_2()
     print("Top function after inner 2:", s)
-
-def demo_logic_operators():
-    print("==== Demo of logic operators ====")
-    a = 1
-    b = 2
-    c = 3 
-    if a > b and b <= c:
-        print("A")
-    if a != b or b == c:
-        print("B")
-    if a != b or not(b == c):
-        print("C")
-    if "x" in "abcxyz":
-        print("D")
-    if "X" in "abcxyz":
-        print("E")
-
-def demo_logic_if():
-    print("==== Demo of logic if ====")
-    inp = input("Enter value: ")
-    if inp.strip().lower() == "a":
-        print("A!")
-    elif inp.strip().lower() == "b":
-        print("B!")
-    elif inp.strip().lower() == "c":
-        print("C!")
-    else:
-        print("Something else.")
-
-def demo_logic_if_ternary(): # Ternary operator
-    print("==== Demo of ternary operator ====")
-    a = 1
-    b = 2
-    print("A") if a > b else print("B")
 
 def demo_logic_if_dynamic_param(_cond):
     print("==== Demo of logic if dynamic parameter type ====")

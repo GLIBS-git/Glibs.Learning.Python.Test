@@ -3,6 +3,7 @@
 '''
 #!/usr/bin/python3
 from decimal import Decimal, ROUND_HALF_UP
+import random
 import os
 import subprocess
 import sys
@@ -74,6 +75,26 @@ def demo_decimal():
 
 def demo_random():
     print("==== Demo random numbers ====")
+    print(random.random()) # 0 <= Random float number < 1
+    print(random.random() * 100) # 0 <= Random float nunber < 100
+    print(random.randint(1, 100)) # 1 <= Random integer number < 100
+    print(random.randint(-100, 100)) # -100 <= Random integer number < 100
+    print(random.randrange(-100, 100)) # -100 <= Random integer number < 100
+    print(random.randrange(-100, 100, 5)) # -100 <= Random integer number step 5 < 100
+    num_list = list()
+    for i in range(10):
+        num_list.append(i)
+    print(num_list)
+    print(random.choice(num_list)) # Select any element from the list
+    print(random.choice(num_list))
+    random.shuffle(num_list) # Shuffle the list
+    print(num_list) # Shffled list
+    char_list = []
+    for c in "abcdefghijklmno".upper():
+        char_list.append(c)
+    print(char_list)
+    print(random.choice(char_list)) # Select any element from the list
+    print(random.choice(char_list))
 
 
 
