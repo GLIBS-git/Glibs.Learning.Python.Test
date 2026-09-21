@@ -1,12 +1,12 @@
 '''
-    Glibs learning test scripts
+    Glibs learning Python test scripts
 '''
 #!/usr/bin/python3
 import asyncio
 import datetime
-#import decimal as decAll       # Sets an alias for imported module
-from decimal import Decimal, ROUND_HALF_UP
-import Module_demo
+import logic_demo
+#import math_demo as md # May be aliased
+import math_demo
 import os
 import subprocess
 import sys
@@ -25,12 +25,13 @@ def menu():
     #demo_string_functions()
     #demo_string_formatting()
     #demo_types()
-    #demo_decimal()
     #demo_exceptions()
     #demo_dates()
     #demo_variables_and_inner_functions()
     #demo_arythmetic()
-    demo_random()
+    #math_demo.demo_arythmetic()
+    #math_demo.demo_decimal()
+    math_demo.demo_random()
     #demo_logic_operators()
     #demo_logic_if()
     #demo_logic_if_ternary()
@@ -43,7 +44,6 @@ def menu():
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
     #print(demo_a_la_ax_strfmt(123, "Text", 123)) # Raises error
-    #demo_module()
     #test()
 
 def clear_console():
@@ -142,36 +142,6 @@ def demo_types():
     #print(int(d)) # This will raise a ValueError because the string contains non-numeric characters
     print(d.isdigit()) # False, because the string contains non-numeric characters
 
-def demo_decimal():
-    print("==== Demo of decimal type ====")
-    dn1 = Decimal("1.11111")
-    dn2 = Decimal("1.11111")
-    print(dn1 + dn2)
-    dn3 = dn1 + dn2
-    print(dn3)
-    dn4 = dn1 * dn2
-    print(dn4)
-    dn5 = dn4.quantize(Decimal("1.00")) # dn4 is untouched
-    print(dn4)
-    print(dn5)
-    print()
-    print(Decimal("1.45").quantize(Decimal("1.0"))) # Not standard mathematical rounding
-    print(Decimal("1.35").quantize(Decimal("1.0"))) # Not standard mathematical rounding
-    print(Decimal("1.25").quantize(Decimal("1.0"))) # Not standard mathematical rounding
-    print(Decimal("1.15").quantize(Decimal("1.0"))) # Not standard mathematical rounding
-    print()
-    print(Decimal("1.45").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
-    print(Decimal("1.35").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
-    print(Decimal("1.25").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
-    print(Decimal("1.15").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
-    print(Decimal("1.14").quantize(Decimal("1.0"), ROUND_HALF_UP)) # Standard mathematical rounding
-    print()
-    print(Decimal("9").sqrt())
-    print(Decimal("3").sqrt())
-    print(Decimal("2")**2)
-    print(Decimal("1.1")**2)
-    print(pow(Decimal("1.1"),2))
-
 def demo_exceptions():
     print("==== Demo of exceptions ====")
     try:
@@ -231,29 +201,6 @@ def demo_variables_and_inner_functions():
         print("Local inner 2: ", s)
     inner_2()
     print("Top function after inner 2:", s)
-
-def demo_arythmetic():
-    print("==== Demo of arythmetic ====")
-    a = 7
-    b = 2
-    print(a + b)
-    print(a / b)
-    print(a // b) # 3
-    print(a % b) # 2
-    print(a ** b) # a^b
-    print(round(1/3, 4))
-    i = 0
-    i += 1
-    print(i)
-    print()
-    print(pow(2, 3))
-    print(abs(-1))
-    print(min(1, 2, 3))
-    print(max(1, 2, 3))
-
-def demo_random():
-    print("==== Demo random numbers ====")
-
 
 def demo_logic_operators():
     print("==== Demo of logic operators ====")
@@ -344,10 +291,6 @@ def demo_a_la_ax_strfmt(_template: str, *_values):
         i += 1
         ret = ret.replace(f"%{i}", str(val))
     return ret
-
-def demo_module():
-    print("==== Demo of using a module ====")
-    Module_demo.print_hello()
 
 def demo_async_io(): # Take info from Claude
     print("==== Demo async/await ====")

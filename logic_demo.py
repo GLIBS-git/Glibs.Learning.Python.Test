@@ -11,7 +11,7 @@ def main(_args):
 
 def menu():
     clear_console()    
-    test()
+    #test()
 
 def clear_console():
     if os.name == "nt":
