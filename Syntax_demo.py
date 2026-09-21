@@ -13,10 +13,11 @@ import sys
 import time
 
 def main(_args):
-    starter()
+    menu()
 
-def starter():
+def menu():
     clear_console()    
+    # Uncomment the test you want to run:
     #demo_print()
     #demo_print_sys_names()
     #demo_input()
@@ -25,10 +26,11 @@ def starter():
     #demo_string_formatting()
     #demo_types()
     #demo_decimal()
-    demo_exceptions()
+    #demo_exceptions()
     #demo_dates()
     #demo_variables_and_inner_functions()
     #demo_arythmetic()
+    demo_random()
     #demo_logic_operators()
     #demo_logic_if()
     #demo_logic_if_ternary()
@@ -248,6 +250,10 @@ def demo_arythmetic():
     print(abs(-1))
     print(min(1, 2, 3))
     print(max(1, 2, 3))
+
+def demo_random():
+    print("==== Demo random numbers ====")
+
 
 def demo_logic_operators():
     print("==== Demo of logic operators ====")
