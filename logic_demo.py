@@ -1,5 +1,5 @@
 '''
-    Glibs learning test scripts
+    Logic operators demo Glibs Python scripts
 '''
 #!/usr/bin/python3
 import sys
