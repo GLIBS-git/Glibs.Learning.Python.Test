@@ -2,16 +2,15 @@
     Glibs learning Python test scripts
 '''
 #!/usr/bin/python3
-import asyncio
-import datetime
+import collections_demo
+import console_demo
 import logic_demo
 #import math_demo as md # May be aliased
 import math_demo
 import os
-import string_demo
-import subprocess
 import sys
-import time
+import subprocess
+import types_demo
 
 def main(_args):
     menu()
@@ -19,28 +18,13 @@ def main(_args):
 def menu():
     clear_console()    
     # Uncomment the test you want to run:
-    #demo_print()
-    #demo_print_sys_names()
-    #demo_input()
-    #string_demo.demo_string()
-    #string_demo.demo_string_functions()
-    #string_demo.demo_string_formatting()
-    #demo_types()
+    #collections_demo.menu()
+    console_demo.menu()
+    #logic_demo.menu()
+    #math_demo.menu()
+    #types_demo.menu()
     #demo_exceptions()
-    #demo_dates()
     #demo_variables_and_inner_functions()
-    #demo_arythmetic()
-    #math_demo.demo_arythmetic()
-    #math_demo.demo_decimal()
-    #math_demo.demo_random()
-    #logic_demo.demo_logic_operators()
-    #logic_demo.demo_logic_if()
-    logic_demo.demo_logic_if_ternary()
-    #logic_demo.demo_logic_if_dynamic_param(1) # Dynamic parameter for IF
-    #logic_demo.demo_logic_if_dynamic_param("a") # Dynamic parameter for IF
-    #logic_demo.demo_logic_switch_case_sycle(4)
-    #logic_demo.demo_logic_switch_case_sycle(_case = 4) # The named parameters with different types, int or str, are supported in Python 3.10 and later.
-    #logic_demo.demo_logic_switch_case_sycle(_case = "d") # The named parameters with different types, int or str, are supported in Python 3.10 and later.
     #print(demo_function_return(1)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_function_return(2)) # The returned value can be of any type, int, str, list, dict, etc.
     #print(demo_a_la_ax_strfmt("Test: %1, %2!", "Text", 123)) # Dynamic parameters
@@ -53,48 +37,6 @@ def clear_console():
     else:
         subprocess.run(["clear"], check=False)
         
-def demo_print():
-    print("==== Demo of 'print' ====")
-    print("Hello world!")
-    print(2 * 2)
-    print(f"2 * 2 = {2 * 2}")
-    print("123", "789", sep=" ", end=" ")
-    print("456")
-    path = r"D:\Python\Source" # D:\Python\Source, but D:\Python\Source\ not working, because the last backslash is an escape character, so it needs to be escaped with another backslash or use raw string.
-    print(path)
-    print(1); print(2); print(3) # This way is possible
-    print("Value 1: {}.    Value 2: {}.    Value 3: {}.".format(1, 2, 3)) # Formatting a string
-
-def demo_print_sys_names():
-    print("==== Demo of system names ====")
-    print(__name__) # Prints the name of the current module
-    print(__file__) # Prints the path of the current module
-    #print(__package__) # Prints the package of the current module
-    print(sys.platform) # Prints the platform (e.g., win32, linux, darwin)
-    print(sys.version) # Prints the Python version
-
-def demo_input():
-    print("==== Demo of console input ====")
-    inp = input("Enter text: ")
-    print()
-    print(inp)
-
-def demo_types():
-    print("==== Demo of type conversion ====")
-    x = 1
-    y = "a"
-    z = 1.11
-    print(str(x) + " " + y)
-    print(int(z))
-    a = "123"
-    b = 25
-    print(int(a) + b)
-    c = "1.11"
-    print(float(c) + z)
-    d = "4a5b6"
-    #print(int(d)) # This will raise a ValueError because the string contains non-numeric characters
-    print(d.isdigit()) # False, because the string contains non-numeric characters
-
 def demo_exceptions():
     print("==== Demo of exceptions ====")
     try:
@@ -118,25 +60,6 @@ def demo_exceptions():
         print(f"General exception caught: {e}")
     finally:
         print("This block is executed regardless of whether an exception occurred or not.")
-
-def demo_dates():
-    print("==== Demo of dates ====")
-    dd = datetime.date.today()
-    print(dd)
-    dt = datetime.datetime.today()
-    print(dt)
-    time.sleep(0.5) # Seconds
-    dt_2 = datetime.datetime.today()
-    print(dt_2 - dt)
-    async def xSleep(s):
-        await asyncio.sleep(s) # Seconds
-    asyncio.run(xSleep(0.3))
-    dt_3 = datetime.datetime.today()
-    print(dt_3 - dt_2)
-    dt_4 = datetime.datetime.strptime("01-01-2027 00:00:00", "%d-%m-%Y %H:%M:%S")
-    print(dt_4)
-    dt_5 = datetime.datetime.strptime("01-01-27 00:00:00", "%d-%m-%y %H:%M:%S")
-    print(dt_5)
 
 def demo_variables_and_inner_functions():
     print("==== Local and global variables & inner functions ====")

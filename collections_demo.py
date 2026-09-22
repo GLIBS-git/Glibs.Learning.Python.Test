@@ -11,6 +11,7 @@ def main(_args):
 
 def menu():
     clear_console()    
+    demo_lists()
     #test()
 
 def clear_console():
@@ -19,6 +20,16 @@ def clear_console():
     else:
         subprocess.run(["clear"], check=False)
         
+def demo_lists():
+    print("==== Lists ====")
+    numList = [1, 2, 3, 4, 5]
+    print(numList)
+    charList = ["A", "B", "C", "D", "E"]
+    print(charList)
+    emptyList = []
+    print(emptyList)
+    emptyList_2 = list()
+    print(emptyList_2)
 
 
 

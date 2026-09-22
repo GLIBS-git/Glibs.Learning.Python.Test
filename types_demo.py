@@ -2,18 +2,23 @@
     Strings demo Glibs Python scripts
 '''
 #!/usr/bin/python3
-import sys
+import asyncio
+import datetime
 import os
 import subprocess
+import sys
+import time
 
 def main(_args):
     menu()
 
 def menu():
     clear_console()    
+    #demo_types()
     #demo_string()
     #demo_string_functions()
     demo_string_formatting()
+    #demo_dates()
     #test()
 
 def clear_console():
@@ -22,6 +27,22 @@ def clear_console():
     else:
         subprocess.run(["clear"], check=False)
         
+def demo_types():
+    print("==== Demo of type conversion ====")
+    x = 1
+    y = "a"
+    z = 1.11
+    print(str(x) + " " + y)
+    print(int(z))
+    a = "123"
+    b = 25
+    print(int(a) + b)
+    c = "1.11"
+    print(float(c) + z)
+    d = "4a5b6"
+    #print(int(d)) # This will raise a ValueError because the string contains non-numeric characters
+    print(d.isdigit()) # False, because the string contains non-numeric characters
+
 def demo_string():
     print("==== Strings ====")
     s1 = "Test!"
@@ -65,10 +86,29 @@ def demo_string_functions():
 
 def demo_string_formatting():
     print("==== String formatting ====")
-    print("P1: {}. P2: {}.".format("1", "2"))
-    print("P1: {0}. P2: {1}.".format("1", "2"))
-    #print("P1: {1}. P2: {2}.".format("1", "2")) # Out or array range exception!
-    print("P1: {0}. P2: {0}.".format("1", "2"))
+    print("P1: {}. P2: {}.".format("1", "2")) # P1: 1. P2: 2.
+    print("P1: {0}. P2: {1}.".format("1", "2")) # P1: 1. P2: 2.
+    #print("P1: {1}. P2: {2}.".format("1", "2")) # Out or array range exception! Parameter 0 & 1 exists, parameter 2 does not exist.
+    print("P1: {0}. P2: {0}.".format("1", "2")) # P1: 1. P2: 1.
+
+def demo_dates():
+    print("==== Demo of dates ====")
+    dd = datetime.date.today()
+    print(dd)
+    dt = datetime.datetime.today()
+    print(dt)
+    time.sleep(0.5) # Seconds
+    dt_2 = datetime.datetime.today()
+    print(dt_2 - dt)
+    async def xSleep(s):
+        await asyncio.sleep(s) # Seconds
+    asyncio.run(xSleep(0.3))
+    dt_3 = datetime.datetime.today()
+    print(dt_3 - dt_2)
+    dt_4 = datetime.datetime.strptime("01-01-2027 00:00:00", "%d-%m-%Y %H:%M:%S")
+    print(dt_4)
+    dt_5 = datetime.datetime.strptime("01-01-27 00:00:00", "%d-%m-%y %H:%M:%S")
+    print(dt_5)
 
 
 
