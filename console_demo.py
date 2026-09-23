@@ -33,6 +33,8 @@ def demo_print():
     print(path)
     print(1); print(2); print(3) # This way is possible
     print("Value 1: {}.    Value 2: {}.    Value 3: {}.".format(1, 2, 3)) # Formatting a string
+    print ("Text 1 " \
+        "Text 2") # Printing multiline text. No spaces after "\"!
 
 def demo_print_sys_names():
     print("==== Demo of system names ====")

@@ -15,9 +15,9 @@ def main(_args):
 def menu():
     clear_console()    
     #demo_types()
-    #demo_string()
+    demo_string()
     #demo_string_functions()
-    demo_string_formatting()
+    #demo_string_formatting()
     #demo_dates()
     #test()
 
@@ -49,8 +49,8 @@ def demo_string():
     print(s1)
     s2 = 'Test!'
     print(s2)
-    mls = ("123" # Multiline string
-    "456")
+    mls = ("123"
+    "456") # Multiline string
     print(mls)
     mlt = '''Multiline text 1
 Multiline text 2

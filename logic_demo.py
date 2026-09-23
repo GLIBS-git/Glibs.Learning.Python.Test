@@ -73,7 +73,7 @@ def demo_logic_if_dynamic_param(_cond):
     else:
         pass # Do nothing, just skip to the next statement
 
-def demo_logic_switch_case_sycle(_case=1): # Dynamic parameter type, can be int or str
+def demo_logic_switch_case_sycle(_case = 1): # Dynamic parameter type, can be int or str
     print("==== Demo switch case ====")
     print(f"Parameter: {_case}")
     match _case:

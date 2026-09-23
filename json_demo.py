@@ -1,5 +1,5 @@
 '''
-    Collections demo Glibs Python scripts
+    JSON demo Glibs Python scripts
 '''
 #!/usr/bin/python3
 import os
@@ -19,6 +19,8 @@ def clear_console():
     else:
         subprocess.run(["clear"], check=False)
         
+def test():
+    print("==== Test ====")
 
 
 
