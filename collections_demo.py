@@ -80,6 +80,13 @@ def demo_dictionaries(): # Mutable key-value pairs
     print(len({"one": 1, "two": 2, "three": 3})) # 3
     print(min({"one": 1, "two": 2, "three": 3})) # 'one'
     print(max({"one": 1, "two": 2, "three": 3})) # 'three'
+    d_1 = {1:"a", 2:"b", 3:"c", 4:"d", 5:"e"}
+    print(d_1) # {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}
+    d_2 = {1:"a", 1:"a"}
+    print(d_2) # {1: 'a'}
+    d_2 = {1:"a", 1:"b", 1:"c"}
+    print(d_2) # {1: 'c'}
+
 
 
 
