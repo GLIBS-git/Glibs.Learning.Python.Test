@@ -12,7 +12,8 @@ def main(_args):
 
 def menu():
     clear_console()    
-    demo_json_encode_decode()
+    #demo_json_encode_decode()
+    demo_json_encode_decode_2()
     #test()
 
 def clear_console():
@@ -40,6 +41,36 @@ def demo_json_encode_decode():
         print(js_2["Name"])
     else:
         print("Key not found") # This will print "Key not found" because "Name" is not a key in the dictionary. The correct key is "name".
+
+def demo_json_encode_decode_2():
+    print("==== JSON encode & decode ====")
+    js = {
+        "name": "John",
+        "surname": "Smith",
+        "age": 33,
+        "city": "Los Angeles",
+        "country": "USA",
+        "languages": [
+            {"name": "English", "level": "native"},
+            {"name": "Spanish", "level": "intermediate"},   
+            {"name": "French", "level": "beginner"}
+        ],
+        "isMarried": False,
+        "children": ["Anna", "Bob"],
+        "pets": None,
+        "cars": [
+            {"model": "BMW 230", "mpg": 27.5},
+            {"model": "Ford Edge", "mpg": 24.1},
+        ],
+    }    
+    print(type(js))
+    print(js) 
+    js_str = json.dumps(js, indent = 2) # Indent -- human readable format
+    print(js_str)
+
+
+
+
 
 
 def test():

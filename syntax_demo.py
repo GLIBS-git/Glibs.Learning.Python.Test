@@ -4,6 +4,7 @@
 #!/usr/bin/python3
 import collections_demo
 import console_demo
+import json_demo
 import logic_demo
 #import math_demo as md # May be aliased
 import math_demo
@@ -19,9 +20,10 @@ def menu():
     clear_console()    
     # Uncomment the test you want to run:
     #collections_demo.menu()
-    console_demo.menu()
+    #console_demo.menu()
     #logic_demo.menu()
     #math_demo.menu()
+    json_demo.menu()
     #types_demo.menu()
     #demo_exceptions()
     #demo_variables_and_inner_functions()
